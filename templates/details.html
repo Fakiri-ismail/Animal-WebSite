@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %} {{animal["Name"]}}'s Details - Paws Rescue Center {% endblock %}
+
+{% block content %}
+<div style="margin:2%">
+    <div style="float:left; border-style:double;">
+        <img src= "{{url_for('static', filename = animal['id']|string+'.jpg')}}" height="350" >
+    </div>
+    <div style="float:left; margin:10px;">
+        <h1 class="title">{{ animal["Name"] }}</h1>
+        <p><b>Age: &nbsp;</b> {{ animal["Age"] }}</p>
+        <p><b>Bio: &nbsp;</b> {{ animal["Bio"] }}</p>
+    </div>
+</div>
+{% endblock %}
