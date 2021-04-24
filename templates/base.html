@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}" />
+    <title>{% block title %}      {% endblock %}</title>
+    {% block head %}
+        <!-- Placeholder for Other Imports -->
+    {% endblock %}
+</head>
+<body>
+
+    {#
+        is used for comments.
+        {% ... %} is used for statements.
+        {{ ... }} is used for variables.
+        # ... ## is used for line statements.
+    #}
+
+        {% block content %}
+        <!-- Placeholder for Page Content -->
+        {% endblock %}
+
+</body>
+</html>

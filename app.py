@@ -1,23 +1,37 @@
-from flask import Flask
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
+
 @app.route("/")
 def home():
-    return "Paws Rescue Center 🐾"
+    animals = [{'Image':'1.jpg',
+                'Name': 'Nelly',
+                'Age': '5 weeks',
+                'Bio': 'I am a tiny kitten rescued by the good people at Paws Rescue Center.'},
+               {'Image':'2.jpg',
+                'Name': 'Yuki',
+                'Age': '3 weeks',
+                'Bio': 'I am a handsome gentle-cat. I like to dressup in bow ties.'},
+               {'Image':'3.jpg',
+                'Name': 'Basker',
+                'Age': '1 year',
+                'Bio': 'I love barking. But, I love my friends more.'}
+               ]
+    return render_template("home.html", animals=animals)
+
 
 # Static routing
 @app.route("/about")
 def about():
-    return "We are a non-profit organization working as an animal rescue. " \
-           "We aim to help you connect with the purrfect furbaby for you! " \
-           "The animals you find on our website are rescued and rehabilitated animals. " \
-           "Our mission is to promote the ideology <<Adopt,don't Shop>>"
+    return render_template("about.html")
+
 
 # Dynamic routing
-@app.route('/square/<int:number>')      # String (default), int, float, path (Strings with slashes), uuid.
+@app.route('/<int:number>')  # String (default), int, float, path (Strings with slashes), uuid.
 def show_square(number):
-    return "Square of "+ str(number) +" is: "+ str(number * number)
+    return "Square of " + str(number) + " is: " + str(number * number)
+
 
 if __name__ == "__main__":
     app.run()
