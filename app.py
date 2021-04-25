@@ -13,6 +13,7 @@ animals = [
 
 users = [
     {"id": 1, "fullName": "Fakiri Ismail", "email": "fakiri@gmail.com", "password": "123456"},
+	{"id": 2, "fullName": "Dikola", "email": "Dikola@gmail.com", "password": "azerty"},
         ]
 
 @app.route("/")
