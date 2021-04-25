@@ -17,9 +17,15 @@
     #}
 
     <div>
-        <ul>
+        <ul style="list-style-type: none;float: right;font-size: large;">
             <li><a href="{{url_for('home')}}">Home</a></li>
+            <li><a href="{{url_for('about')}}">About</a></li>
+            {% if 'user' in session %}
+            <li><a href="{{url_for('logout')}}">logout</a></li>
+            {% else %}
             <li><a href="{{url_for('login')}}">Login</a></li>
+            <li><a href="{{url_for('singUp')}}">Sing Up</a></li>
+            {% endif%}
         </ul>
     </div>
 
