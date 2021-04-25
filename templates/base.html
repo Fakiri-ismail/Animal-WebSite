@@ -9,7 +9,6 @@
     {% endblock %}
 </head>
 <body>
-
     {#
         is used for comments.
         {% ... %} is used for statements.
@@ -17,9 +16,16 @@
         # ... ## is used for line statements.
     #}
 
-        {% block content %}
-        <!-- Placeholder for Page Content -->
-        {% endblock %}
+    <div>
+        <ul>
+            <li><a href="{{url_for('home')}}">Home</a></li>
+            <li><a href="{{url_for('login')}}">Login</a></li>
+        </ul>
+    </div>
+
+    {% block content %}
+    <!-- Placeholder for Page Content -->
+    {% endblock %}
 
 </body>
 </html>
