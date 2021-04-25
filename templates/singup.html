@@ -1,10 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends "base.html" %}
+
+{% block title %} SingUP Page {% endblock %}
+
+{% block content %}
+<div style="text-align: center">
+    <h1>Sing UP</h1>
+    
+    <form action="{{url_for('singUp')}}" method="POST">
+        {{ form.fullName.label }}:<br>
+        {{ form.fullName }}<br>
+
+        {{ form.email.label }}:<br>
+        {{ form.email }}<br>
+        {% if form.email.errors %}
+            <p style="color:red">{{ form.email.errors[0] }}</p>
+        {% endif%}
+
+        {{ form.password1.label }}: <br>
+        {{ form.password1 }}<br>
+
+        {{ form.password2.label }}: <br>
+        {{ form.password2 }}<br>
+        {% if form.password2.errors %}
+            <p style="color:red">{{ form.password2.errors[0] }}</p>
+        {% endif%}
+
+        {{ form.csrf_token }}
+        {{ form.submit }}
+    </form>
+	{% if message %}
+        <p style="color:red">{{ message }}</p>
+    {% endif %}
+</div>
+{% endblock %}
