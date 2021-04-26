@@ -15,13 +15,13 @@
     {% for animal in animals %}
         <tr>
           <td>
-              <a href="{{url_for('animal_details', animal_id = animal['id'])}}">        {# 'animal_details' is a fuction in app.py #}
-                  <img src= "{{ url_for( 'static', filename=loop.index|string+'.jpg') }}" height="100" >
+              <a href="{{url_for('animal_details', animal_id = animal.id)}}">        {# 'animal_details' is a fuction in app.py #}
+                  <img src= "{{ url_for( 'static', filename=animal.id|string+'.jpg') }}" height="100" >
               </a>
           </td>
-          <td>{{ animal['Name'] }}</td>
-          <td>{{ animal['Age'] }}</td>
-          <td>{{ animal['Bio'] }}</td>
+          <td>{{ animal.name }}</td>
+          <td>{{ animal.age }}</td>
+          <td>{{ animal.bio }}</td>
         </tr>
     {% endfor %}
 
