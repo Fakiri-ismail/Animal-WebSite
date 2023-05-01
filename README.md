@@ -1,5 +1,4 @@
-# Flask_App
-- Learning Flask Framework
+# Learning Flask Framework
   - **MTV** Architecture
   - **URL** Routes
   - Dynamic Routing
